@@ -1,0 +1,246 @@
+package com.example.travelagency;
+
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+
+import javax.xml.crypto.Data;
+import java.io.IOException;
+import java.net.URL;
+import java.util.Optional;
+import java.util.ResourceBundle;
+
+
+
+public class paymentController extends addviewbusbooking implements Initializable  {
+    public AnchorPane creditpane;
+    public TextField cname;
+    public TextField cnumber;
+    public TextField cdate;
+    public TextField camt;
+    public AnchorPane gpane;
+    public TextField gname;
+    public TextField gnumber;
+    public TextField gamt;
+    public RadioButton creditcard;
+    public RadioButton gpay;
+
+    static boolean isVisible = true;
+    public Button button;
+    public TextField cvv;
+    public ComboBox month;
+    public ComboBox year;
+    @FXML
+    public ImageView google;
+    @FXML
+    public ImageView credit;
+    @FXML
+    public ImageView h;
+
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+        ToggleGroup radio = new ToggleGroup();
+        creditcard.setToggleGroup(radio);
+        gpay.setToggleGroup(radio);
+        button.setText("Proceed to pay");
+        month.getItems().addAll("Jan","Feb","Mar","Apr","May","June","July","Aug","Sep","Oct","Nov","Dec");
+        year.getItems().addAll(2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030);
+
+
+
+        radio.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (creditcard.isSelected()){
+                creditpane.setVisible(true);
+                gpane.setVisible(false);
+                credit.setVisible(true);
+            }else {
+                gpane.setVisible(true);
+                creditpane.setVisible(false);
+            }
+        });
+
+
+
+
+
+
+
+    }
+
+
+    public void proceed(ActionEvent event) throws IOException{
+
+        if (this.cnumber.getText().isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.NONE);
+            alert.setAlertType(Alert.AlertType.ERROR);
+            alert.setContentText("Please Enter the Card Number ");
+            alert.show();
+        }
+        else if (this.cname.getText().isEmpty()) {
+
+            Alert alert1 = new Alert(Alert.AlertType.NONE);
+            alert1.setAlertType(Alert.AlertType.ERROR);
+            alert1.setContentText("Please Enter the CardHolder Name ");
+            alert1.show();
+        }
+        else if (this.month.getItems().isEmpty()) {
+
+            Alert alert2 = new Alert(Alert.AlertType.NONE);
+            alert2.setAlertType(Alert.AlertType.ERROR);
+            alert2.setContentText("Please Enter the Expiry Month ");
+            alert2.show();
+        }
+        else if (this.year.getItems().isEmpty()) {
+
+            Alert alert3 = new Alert(Alert.AlertType.NONE);
+            alert3.setAlertType(Alert.AlertType.ERROR);
+            alert3.setContentText("Please Enter the Expiry Year ");
+            alert3.show();
+        }
+        else if (this.cvv.getText().isEmpty()){
+
+            Alert alert4 = new Alert(Alert.AlertType.NONE);
+            alert4.setAlertType(Alert.AlertType.ERROR);
+            alert4.setContentText("Please Enter the CVV ");
+            alert4.show();
+
+        }
+        else if (this.camt.getText().isEmpty()){
+
+            Alert alert4 = new Alert(Alert.AlertType.NONE);
+            alert4.setAlertType(Alert.AlertType.ERROR);
+            alert4.setContentText("Please Enter the CVV ");
+            alert4.show();
+
+        }
+
+
+        else {
+            Alert alert = new Alert(Alert.AlertType.NONE);
+            alert.setAlertType(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Ticket Booked");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+
+
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("homepage.fxml"));
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+                    Parent root1 = fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root1));
+                    stage.show();
+                } catch (Exception ep) {
+                    ep.printStackTrace();
+                }
+
+            }
+
+        }
+
+
+    }
+
+    public void gpay(ActionEvent event) throws IOException{
+
+        if(this.gname.getText().isEmpty()){
+            Alert alert4 = new Alert(Alert.AlertType.NONE);
+            alert4.setAlertType(Alert.AlertType.ERROR);
+            alert4.setContentText("Please Enter the Name ");
+            alert4.show();
+        }
+        else if(this.gnumber.getText().isEmpty()){
+            Alert alert4 = new Alert(Alert.AlertType.NONE);
+            alert4.setAlertType(Alert.AlertType.ERROR);
+            alert4.setContentText("Please Enter the Google Pay Number ");
+            alert4.show();
+        }
+        else if(this.gamt.getText().isEmpty()){
+            Alert alert4 = new Alert(Alert.AlertType.NONE);
+            alert4.setAlertType(Alert.AlertType.ERROR);
+            alert4.setContentText("Please Enter the Amount ");
+            alert4.show();
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.NONE);
+            alert.setAlertType(Alert.AlertType.CONFIRMATION);
+            alert.setContentText("Ticket Booked");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+
+
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("homepage.fxml"));
+                    ((Node) (event.getSource())).getScene().getWindow().hide();
+                    Parent root1 = fxmlLoader.load();
+                    Stage stage = new Stage();
+                    stage.setScene(new Scene(root1));
+                    stage.show();
+                } catch (Exception ep) {
+                    ep.printStackTrace();
+                }
+
+            }
+        }
+
+    }
+
+    public void home(ActionEvent event) throws IOException {
+        Parent parent = null;
+        try {
+            parent = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+            Scene scene = new Scene(parent);
+            Stage window = (Stage)((Node) event.getSource()).getScene().getWindow();
+            window.setScene(scene);
+            window.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+
+
+    public void cancel1(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setContentText("Are you sure ?");
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("homepage.fxml"));
+                ((Node) (event.getSource())).getScene().getWindow().hide();
+                Parent root1 = fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root1));
+                stage.show();
+            } catch (Exception ep) {
+                ep.printStackTrace();
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+

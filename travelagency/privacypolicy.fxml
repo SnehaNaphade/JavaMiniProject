@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="949.0" prefWidth="1961.0" style="-fx-background-color: #000000; -fx-text-fill: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.travelagency.profileController">
+    <AnchorPane layoutX="-32.0" layoutY="-5.0" prefHeight="958.0" prefWidth="577.0" style="-fx-background-color: #222222; -fx-text-fill: white;">
+        <ImageView fitHeight="156.0" fitWidth="154.0" layoutX="224.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../../../images/user.png" />
+        </ImageView>
+        <Label layoutX="228.0" layoutY="223.0" prefHeight="39.0" prefWidth="161.0" text="Sanjay Kalara" textFill="#fcfcfc">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Button layoutX="211.0" layoutY="272.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="154.0" style="-fx-background-color: #2F2F2FA3; -fx-background-radius: 100;" text="Edit Profile" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="27.0" fitWidth="20.0" layoutX="214.0" layoutY="573.0" pickOnBounds="true" preserveRatio="true">
+        </ImageView>
+        <Button layoutX="26.0" layoutY="383.0" mnemonicParsing="false" onAction="#profilebutton" prefHeight="72.0" prefWidth="552.0" style="-fx-background-color: #1F51FF;" text="Profile" textFill="WHITE">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Button>
+        <Button layoutX="26.0" layoutY="671.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="552.0" style="-fx-background-color: #2F2F2FA3;" text="        Privacy Policy" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button layoutX="25.0" layoutY="599.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="552.0" style="-fx-background-color: #2F2F2FA3;" text="Settings" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button layoutX="26.0" layoutY="527.0" mnemonicParsing="false" onAction="#passwordbutton" prefHeight="72.0" prefWidth="552.0" style="-fx-background-color: #2F2F2FA3;" text="  Password" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <Button layoutX="25.0" layoutY="455.0" mnemonicParsing="false" prefHeight="72.0" prefWidth="552.0" style="-fx-background-color: #2F2F2FA3;" text="       Notification" textFill="WHITE">
+            <font>
+                <Font size="13.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="27.0" fitWidth="20.0" layoutX="180.0" layoutY="409.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/person.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="178.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/bell.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="178.0" layoutY="551.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/key.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="177.0" layoutY="623.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/setting.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="27.0" fitWidth="25.0" layoutX="177.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../images/lock.png" />
+            </image>
+        </ImageView>
+    </AnchorPane>
+    <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="639.0" layoutY="33.0" prefHeight="32.0" prefWidth="162.0" style="-fx-text-fill: white;" text="Profile Settings" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="22.0" />
+        </font>
+    </Label>
+    <Label layoutX="643.0" layoutY="98.0" prefHeight="39.0" prefWidth="135.0" text="Profile details" textFill="#fcfcfc">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+    <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="645.0" layoutY="170.0" prefHeight="22.0" prefWidth="58.0" style="-fx-text-fill: white;" text="Name" textFill="WHITE">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </Label>
+    <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="645.0" layoutY="250.0" prefHeight="22.0" prefWidth="87.0" style="-fx-text-fill: white;" text="Username" textFill="WHITE">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </Label>
+    <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="631.0" layoutY="345.0" prefHeight="22.0" prefWidth="116.0" style="-fx-text-fill: white;" text="Date of Birth" textFill="WHITE">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </Label>
+    <Label layoutX="640.0" layoutY="426.0" prefHeight="39.0" prefWidth="116.0" text="Contact info" textFill="#fcfcfc">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+    <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="645.0" layoutY="524.0" prefHeight="18.0" prefWidth="58.0" style="-fx-text-fill: white;" text="Phone" textFill="WHITE">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </Label>
+    <Label alignment="TOP_RIGHT" contentDisplay="CENTER" layoutX="638.0" layoutY="618.0" prefHeight="18.0" prefWidth="58.0" style="-fx-text-fill: white;" text="Email" textFill="WHITE">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </Label>
+    <Button layoutX="768.0" layoutY="704.0" mnemonicParsing="false" onAction="#savebuttononaction" prefHeight="53.0" prefWidth="205.0" style="-fx-background-color: #2F2F2FA3; -fx-background-radius: 100;" text="Save Changes" textFill="WHITE">
+        <font>
+            <Font size="13.0" />
+        </font>
+    </Button>
+    <TextField layoutX="802.0" layoutY="158.0" prefHeight="46.0" prefWidth="478.0" promptText="Enter  Name" />
+    <TextField layoutX="802.0" layoutY="238.0" prefHeight="46.0" prefWidth="478.0" promptText="Enter Username" />
+    <TextField layoutX="797.0" layoutY="333.0" prefHeight="46.0" prefWidth="478.0" promptText="Enter Date Of Birth" />
+    <TextField layoutX="802.0" layoutY="511.0" prefHeight="46.0" prefWidth="478.0" promptText="Enter Phone No" />
+    <TextField layoutX="802.0" layoutY="605.0" prefHeight="46.0" prefWidth="478.0" promptText="Enter Email" />
+    <Button layoutX="1085.0" layoutY="703.0" mnemonicParsing="false" onAction="#backbuttononaction" prefHeight="54.0" prefWidth="206.0" style="-fx-background-color: #2F2F2FA3; -fx-background-radius: 100;" text="Back" textFill="WHITE">
+        <font>
+            <Font size="13.0" />
+        </font>
+    </Button>
+</AnchorPane>
